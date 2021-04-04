@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twitter Bot Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font-family: Helvetica Neue; 
+  } 
+
+  .navbar{background-color: #00acee;}
+  .navbar-brand {
+    font-size: 35px;
+  }
+  .info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+  
+  .nav-item
+  {
+    color: white;
+
+  }
+  .form-control mr-sm-2
+  {
+    
+    box-sizing: border-box;
+  }
+
+  /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #00acee;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 25%;
+  height: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens 
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  } */
+
+.jumbotron
+  {
+    font-size: 18px;
+    color: black;
+    background-color : white;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+  
+  h3{text-align: center;}
+ 
+ .center { 
+  width: 20%;
+  position: absolute;
+  left: 55%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+ .display-3
+  {
+    font-size: 60px;
+  }
+.button1 {
+
+  position: absolute;
+}
+.card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      }
+
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+
+      /* Add some padding inside the card container */
+      .container {
+      padding: 2px 16px;
+      }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <img src="{{url_for('static', filename='twitterBot.png')}}" alt="logo" width="60px" height="60px">
+    <a class="navbar-brand text-white" href="{{ url_for('home')}}">Bot deTechno</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('faq')}}">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url_for('explore')}}">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('teams')}}">Team</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false text-white">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class ="card">
+    <div class="container">
+  <div class="container  bg-white text-dark text-center ">
+    <!-- <img src="{{url_for('static', filename='twitterBot.png')}}" alt="logo" width="150" height="150" align="right-top"> -->
+    <h3 class="display-3">Bot deTechno</h3>
+     
+     
+   </div>
+
+
+<div class="jumbotron" >
+ Bot deTechno checks that the user is a bot or not.
+ <br>
+ 
+ Use of this service requires Twitter authentication and permissions.
+ <br> 
+ 
+ If something's not working or you have questions, please contact us only after   reading.<a class="link" href="{{ url_for('faq')}}">FAQ</a>
+ <br>
+ Click below to check whether a account is a bot or genuine user.
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="container">
+<div class="center"><div class="button1"><button onclick="document.getElementById('id01').style.display='block'">Enter Account Info</button></div></div>
+<br>
+<br>
+<br>
+<div class = "predict_text" style = "display: block; text-align: center;">{{ message }}</div>
+</div>
+</div>
+<div class="info">
+  <p><strong>Info!</strong> Enter the twitter account information asked.</p>
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="{{ url_for('predict')}}" method="post" enctype = "multipart/form-data">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="{{url_for('static', filename='twitterBot.png')}}" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <div>
+        <label for="screen_name_binary_file"><b>Screen Names in file format</b></label>
+        <input accept=".txt" type="file" placeholder="Enter Screen Name" id="screen_name_binary_file" name="screen_name_binary_file">
+    </div>
+    <div>
+        <h5>OR</h5>
+    </div>
+    <div>
+        <label for="screen_name_binary"><b>Screen Name</b></label>
+        <input type="text" placeholder="Enter Screen Name" id="screen_name_binary" name="screen_name_binary">
+    </div>  
+      <!-- <label for="name_binary"><b>Name Binary</b></label>
+      <input type="text" placeholder="Enter Name Binary" id="name_binary" name="name_binary">
+      
+      <label for="description_binary"><b>Description Binary</b></label>
+      <input type="text" placeholder="Description Binary" id="description_binary" name="description_binary">
+      
+      <label for="status_binary"><b>Status Binary</b></label>
+      <input type="text" placeholder="Enter Status Binary" id="status_binary" name="status_binary">
+      
+      <label for="verified"><b>Verfied</b></label>
+      <input type="text" placeholder="Enter if Verified" id="verified" name="verified">
+      
+      <label for="followers_count"><b>Followers Count</b></label>
+      <input type="text" placeholder="Enter Followers Count" id="followers_count" name="followers_count">
+      
+      <label for="friends_count"><b>Friends Count</b></label>
+      <input type="text" placeholder="Enter Friends Count" id="friends_count" name="friends_count">
+      
+      <label for="statuses_count"><b>Status Count</b></label>
+      <input type="text" placeholder="Enter Status Count" id="statuses_count" name="statuses_count">
+      
+      <label for="listed_count_binary"><b>Listed Count Binary</b></label>
+      <input type="text" placeholder="Enter Listed Count Binary" id="listed_count_binary" name="listed_count_binary"> -->
+        
+      <button type="submit">Predict</button>
+      
+      
+      
+    </div>
+    <div class="info">
+      <p><strong>Info!</strong> If a single username has to be given, use the text field. If multiple usernames have to be checked, use the file field with comma-separated usernames.</p>
+    </div>
+  
+  </form>
+  <!-- {{ message }} -->
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</nav>
+</body>
+</html>

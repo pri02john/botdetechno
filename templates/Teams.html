@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twitter Bot Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    background: #f7f7f7;
+}
+
+.container {
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    margin-bottom: 50px
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 100
+}
+
+.icon {
+    position: relative;
+    bottom: 11px
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%
+}
+
+.card {
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+}
+
+.card-body {
+    position: relative;
+    bottom: 20px
+}
+
+.btn {
+    margin-top: 20px;
+    margin-bottom: 45px;
+    background-color: #AB47BC;
+    border: none;
+    color: #fff;
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    color: #fff
+}
+
+
+.header {
+    padding-top: 2px
+}
+.ft
+{
+	text-align:center;
+	font-size:60px;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  float: left;
+}
+img {
+  border-radius: 5px 5px 0 0;
+  width: 30px;
+  height: 70px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 15px 20px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <img src="{{url_for('static', filename='twitterBot.png')}}" alt="logo" width="60px" height="60px">
+        <a class="navbar-brand text-white" href="{{ url_for('home')}}">Bot deTechno</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('faq')}}">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('explore')}}">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('teams')}}">Team</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false text-white">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>  
+
+<div class='container mx-auto mt-5 col-md-10 mt-100'>
+    <div class="header">
+        <div class="title">Our Team</div>
+        
+    </div>
+    <!-- <div class="row" style="justify-content: center">
+        <div class="card col-md-3 mt-100">
+            <div class="card-content">
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="{{url_for('static', filename='j.jpeg')}}"> </div>
+                    <div class="card-title"> Jison M Johnson<br /> <small>101726</small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 mt-100">
+            <div class="card-content">
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="{{url_for('static', filename='P.png')}}"> </div>
+                    <div class="card-title">Thekkadayil Prince John<br /> <small>101761</small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 mt-100">
+            <div class="card-content">
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="{{url_for('static', filename='A.png')}}"> </div>
+                    <div class="card-title"> Atharva Nilesh Shinde<br /> <small>101755</small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card col-md-3 mt-100">
+            <div class="card-content" style="align-items: center;">
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="{{url_for('static', filename='M.png')}}"> </div>
+                    <div class="card-title">Mansi Dwarkanath Madne<br /> <small>101770</small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div style="width: 52%; margin-left: 24%; margin-right: 24%; display: table; clear: both;">
+            <div class="card" style="width: 40rem;">
+                <img src="{{url_for('static', filename='A.png')}}" class="card-img-top">
+                <div class="card-body">
+                  <h4 class="card-title">ATHARV SHINDE</h4>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>ROLL NO:</b> <b style="font-style: italic;">101755</b></li>
+                  
+                </ul>
+                <div class="card-body">
+                  <p><b>Email Id:</b> atharv@gmail.com</p>
+                  
+                </div>
+              </div>
+        
+            <div class="card" style="width: 40rem;">
+                <img src="{{url_for('static', filename='j.jpeg')}}" class="card-img-top">
+                <div class="card-body">
+                  <h4 class="card-title">JISON M JOHNSON</h4>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>ROLL NO:</b> <b style="font-style: italic;">101726</b></li>
+                  
+                </ul>
+                <div class="card-body">
+                  <p><b>Email Id:</b> jison.m20@gmail.com</p>
+                  
+                </div>
+              </div>
+        
+            <div class="card" style="width: 40rem;">
+                <img src="{{url_for('static', filename='M.png')}}" class="card-img-top">
+                <div class="card-body">
+                  <h4 class="card-title">MANSI D MADNE</h4>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>ROLL NO:</b> <b style="font-style: italic;">101770</b></li>
+                  
+                </ul>
+                <div class="card-body">
+                  <p><b>Email Id:</b> mansi@gmail.com</p>
+                  
+                </div>
+              </div>
+        
+            <div class="card" style="width: 40rem;">
+                <img src="{{url_for('static', filename='P.png')}}" class="card-img-top">
+                <div class="card-body">
+                  <h4 class="card-title">PRINCE JOHN</h4>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>ROLL NO:</b> <b style="font-style: italic;">101761</b></li>
+                  
+                </ul>
+                <div class="card-body">
+                  <p><b>Email Id:</b> pri02john@gmail.com</p>
+                  
+                </div>
+              </div>
+        </div>
+
+    </div>
+    <!-- <div class="ft">
+    <a href="Feedback.html" class="btn btn-info" role="button">Feedback</a>
+        
+    </div> -->
+</div>                            
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='faq1.css')}}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+           .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      margin: 30px;
+      padding: 10px;
+      }
+
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+
+      /* Add some padding inside the card container */
+      .container {
+      padding: 2px 16px;
+      }
+        </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <img src="{{url_for('static', filename='twitterBot.png')}}" alt="logo" width="60px" height="60px">
+        <a class="navbar-brand text-white" href="{{ url_for('home')}}">Bot deTechno</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('faq')}}">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('explore')}}">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('teams')}}">Team</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false text-white">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+        <dl class="faq">
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq1_desc">
+                What is a social bot?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq1_desc" class="desc">
+                There are many kinds of social bots. Some are harmless or even useful or amusing. But malicious bots can be used to manipulate social media users by amplifying misinformation, creating the appearance that some people, ideas, or products are more popular than they are, committing financial fraud, suppressing or disrupting speech, spreading malware or spam, trolling/attacking victims, and other types of abuse.
+                Given this wide range of behaviors, there is no universally agreed-upon definition of bot. We broadly define a social bot as a social media account controlled at least in part through software. Deceptive bots take on inauthentic personas and are controlled by unknown entities. Social media APIs provide methods to execute actions programmatically. A bot need not be automated or autonomous, although some are. Sophisticated autonomous bots are rare. Most automated bots simply act (reply/post/follow etc.) based on triggers or according to scripted patterns, such as retweeting all messages from certain accounts or posting messages from predefined lists.
+                Software may be used to allow a single entity to control many accounts in addition to, or instead of, carrying out autonomous actions. Such an entity may easily mix automatic and manual behaviors to avoid detection. The content of posts and timing of actions may originate from or be closely monitored by humans. When an account is accused of being inauthentic, the controlling entity may take over and engage with other users to claim authenticity. Therefore it is very difficult to prove that an account is a social bot, or who is behind it.
+              </p>
+            </dd>
+          </div>
+          </div>
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq2_desc">
+                Who is behind Bot deTechno and how can I contact them?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq2_desc" class="desc">
+                The best way to contact them is through the Teams information given up on the navigation bar.
+              </p>
+            </dd>
+          </div>
+          </div>
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq3_desc">
+                How does Bot deTechno work?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq3_desc" class="desc">
+                It takes input from the user and then with the help of machine learning techniques, it generates the reults.
+              </p>
+            </dd>
+          </div>
+          </div>
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq4_desc">
+                What are the types of bots?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq4_desc" class="desc">
+                
+                There are different types of Twitter bots.
+                Fake follower: bots purchased to increase follower counts
+                Financial: bots that post using cashtags
+                Self declared: bots from botwiki.org
+                Spammer: accounts labeled as spambots from several datasets
+                Other: miscellaneous other bots obtained from manual annotation, user feedback, etc.
+              </p>
+            </dd>
+          </div>
+          </div>
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq5_desc">
+                This account is clearly a bot/human! Why did you get it wrong?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq5_desc" class="desc">
+                Bot detection is a hard task. Many criteria are used in determining whether an account is controlled by a human or a bot, and even a trained eye gets it wrong sometimes. If this task were easy to do with software, there wouldn't be any bots — Twitter would have already caught and banned them!
+                Another point to keep in mind is that humans and machines have different strengths when it comes to pattern recognition. Some "obviously" bot/human accounts according to a human observer will fool a machine learning algorithm. For example, Botometer sometimes categorizes "organizational accounts" as bot accounts. Likewise, an algorithm may confidently classify some accounts that humans have a hard time with. The best approach is to use this tool to complement, not to replace, your own judgement.
+                When you notice that we got a classification wrong, be sure to give us feedback! While we cannot promise to fix it, your feedback will help improve future classifiers.
+              </p>
+            </dd>
+          </div>
+          </div>
+          <div class="card">
+            <div class="container">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq6_desc">
+                How to execute?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq6_desc" class="desc">
+                User just needs to click on the "Enter Account Info" and eter the username. It could be either a single username or it could include a text file containing multiple comma- separated usernames. Users need to make sure they enter the information of the account/s coorectly. 
+              </p>
+            </dd>
+          </div>
+          </div>
+            <!-- <dt>
+                <button aria-expanded="false" aria-controls="faq4_desc">
+                    How can I leave feedback about classification results?
+                </button>
+              </dt>
+              <dd>
+                <p id="faq4_desc" class="desc">
+                    In the teams section there is a box to provide your valuable feedbacks. 
+                </p>
+              </dd> -->
+          </dl>
+          <script>
+              var ButtonExpand = function (domNode) {
+
+this.domNode = domNode;
+
+this.keyCode = Object.freeze({
+  'RETURN': 13
+});
+};
+
+ButtonExpand.prototype.init = function () {
+
+this.controlledNode = false;
+
+var id = this.domNode.getAttribute('aria-controls');
+
+if (id) {
+  this.controlledNode = document.getElementById(id);
+}
+
+this.domNode.setAttribute('aria-expanded', 'false');
+this.hideContent();
+
+this.domNode.addEventListener('keydown',    this.handleKeydown.bind(this));
+this.domNode.addEventListener('click',      this.handleClick.bind(this));
+this.domNode.addEventListener('focus',      this.handleFocus.bind(this));
+this.domNode.addEventListener('blur',       this.handleBlur.bind(this));
+
+};
+
+ButtonExpand.prototype.showContent = function () {
+
+if (this.controlledNode) {
+  this.controlledNode.style.display = 'block';
+}
+
+};
+
+ButtonExpand.prototype.hideContent = function () {
+
+if (this.controlledNode) {
+  this.controlledNode.style.display = 'none';
+}
+
+};
+
+ButtonExpand.prototype.toggleExpand = function () {
+
+if (this.domNode.getAttribute('aria-expanded') === 'true') {
+  this.domNode.setAttribute('aria-expanded', 'false');
+  this.hideContent();
+}
+else {
+  this.domNode.setAttribute('aria-expanded', 'true');
+  this.showContent();
+}
+
+};
+
+/* EVENT HANDLERS */
+
+ButtonExpand.prototype.handleKeydown = function (event) {
+
+console.log('[keydown]');
+
+switch (event.keyCode) {
+
+  case this.keyCode.RETURN:
+
+    this.toggleExpand();
+
+    event.stopPropagation();
+    event.preventDefault();
+    break;
+
+  default:
+    break;
+}
+
+};
+
+ButtonExpand.prototype.handleClick = function (event) {
+this.toggleExpand();
+};
+
+ButtonExpand.prototype.handleFocus = function (event) {
+this.domNode.classList.add('focus');
+};
+
+ButtonExpand.prototype.handleBlur = function (event) {
+this.domNode.classList.remove('focus');
+};
+
+/* Initialize Hide/Show Buttons */
+
+window.addEventListener('load', function (event) {
+
+var buttons =  document.querySelectorAll('button[aria-expanded][aria-controls]');
+
+for (var i = 0; i < buttons.length; i++) {
+  var be = new ButtonExpand(buttons[i]);
+  be.init();
+}
+
+}, false);
+          </script>
+    </body>
+</html>

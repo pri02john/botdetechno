@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+      .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      margin: 30px;
+      padding: 10px;
+      }
+
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+
+      /* Add some padding inside the card container */
+      .container {
+      padding: 2px 16px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <img src="{{url_for('static', filename='twitterBot.png')}}" alt="logo" width="60px" height="60px">
+      <a class="navbar-brand text-white" href="{{ url_for('home')}}">Bot deTechno</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('faq')}}">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url_for('explore')}}">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('teams')}}">Team</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false text-white">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- <div>
+      <h3>TWITTER BOTS</h3>
+      <p>Twitter is one of the most rapidly growing social networking sites. It allows users to share news, talk about their opinions and discuss current affairs. Governments, organizations, and individual people are actively attempting to persuade or influence the users of social media by spreading propaganda with large networks of bot accounts. The users can follow people whom they know and can spread their contacts. Twitter is a great place for interaction and to meet new people. Twitter is a popular online social networking and microblogging tool, which was released in 2006. Re-markable simplicity is its distinctive feature. Its community interacts via publishing text-based posts, known as tweets. The tweet size is limited to 140 characters. The hashtag, namely words or phrases prefixed with a hashtag symbol, can group tweets by topic. More specifically, when a user posts tweets, these tweets are displayed on both the author’s homepage and those of his followers. The dominance of human users as the primary generators of Internet traffic is coming to an end. In 2016, bots generated more Internet traffic than humans. A bot is a piece of software that completes automated tasks over the Internet. On social media, the prevalence of bots is ubiquitous. By some estimates, nearly 48 million Twitter accounts are automated. Although many bots, such as ‘fake follower bots’, are easy to detect bots that mimic human behavior and seek to spread information while posing as a human user are more difficult to detect. Bots serve a plethora of purposes, many of which provide services to users. Bots are categorized as “good” or “bad” based on the transparency with which they disclose their identity. These ‘social spambots’ can serve a variety of purposes but can be very difficult to detect, even by human observers. Bad bots do not identify themselves to the web servers they access, while good bots declare and identify themselves.</p>
+      <p>For more informations regarding twitter bots you can<a href = "https://en.wikipedia.org/wiki/Twitter_bot" target="_blank"> click here</a>.</p>
+      <p>To understand about "Bots" in particular, you can<a href = "https://whatis.techtarget.com/definition/bot-robot#:~:text=A%20bot%20%2D%2D%20short%20for,without%20specific%20instructions%20from%20humans."> visit here</a>.</p>
+    </div> -->
+    <div class="card">
+      <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%"> -->
+      <div class="container">
+        <h3><b>TWITTER BOTS</b></h4>
+          <p>Twitter is one of the most rapidly growing social networking sites. It allows users to share news, talk about their opinions and discuss current affairs. Governments, organizations, and individual people are actively attempting to persuade or influence the users of social media by spreading propaganda with large networks of bot accounts. The users can follow people whom they know and can spread their contacts. Twitter is a great place for interaction and to meet new people. Twitter is a popular online social networking and microblogging tool, which was released in 2006. Re-markable simplicity is its distinctive feature. Its community interacts via publishing text-based posts, known as tweets. The tweet size is limited to 140 characters. The hashtag, namely words or phrases prefixed with a hashtag symbol, can group tweets by topic. More specifically, when a user posts tweets, these tweets are displayed on both the author’s homepage and those of his followers. The dominance of human users as the primary generators of Internet traffic is coming to an end. In 2016, bots generated more Internet traffic than humans. A bot is a piece of software that completes automated tasks over the Internet. On social media, the prevalence of bots is ubiquitous. By some estimates, nearly 48 million Twitter accounts are automated. Although many bots, such as ‘fake follower bots’, are easy to detect bots that mimic human behavior and seek to spread information while posing as a human user are more difficult to detect. Bots serve a plethora of purposes, many of which provide services to users. Bots are categorized as “good” or “bad” based on the transparency with which they disclose their identity. These ‘social spambots’ can serve a variety of purposes but can be very difficult to detect, even by human observers. Bad bots do not identify themselves to the web servers they access, while good bots declare and identify themselves.</p>
+          <p>For more informations regarding twitter bots you can<a href = "https://en.wikipedia.org/wiki/Twitter_bot" target="_blank"> click here</a>.</p>
+          <p>To understand about "Bots" in particular, you can<a href = "https://whatis.techtarget.com/definition/bot-robot#:~:text=A%20bot%20%2D%2D%20short%20for,without%20specific%20instructions%20from%20humans."> visit here</a>.</p>
+      </div>
+    </div>
+    
+</body>
+</head>
+</html>

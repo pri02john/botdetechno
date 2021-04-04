@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twitter Bot Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font-family: Helvetica Neue;  
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+  .nav-item
+  {
+    color: white;
+
+  }
+  .display-3
+  {
+    font-size: 60px;
+  }
+  .jumbotron
+  {
+    font-size: 18px;
+    color: black;
+    background-color : white;
+    border-style:outset;
+    position:;
+    justify-content:center;
+    align-items:center;
+    
+  
+
+
+  }
+  .form-control mr-sm-2
+  {
+    
+    box-sizing: border-box;
+  }
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand text-white" href="index.html">BOTOMETER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="FAQ.html">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="Explore.html">Explore</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Teams.html">Teams</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false text-white">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+<div class="container  bg-white text-dark text-center ">
+ <img src="logo.png" alt="logo" width="150" height="150" align="right-top">
+ <h3 class="display-3">Twitter Bot Detection</h3>
+  
+  
+</div>
+<div class="jumbotron" >
+Twitter Botometer (formerly BotOrNot) checks that the user is a bot or not.
+<br>
+
+Use of this service requires Twitter authentication and permissions.
+<br>
+
+If something's not working or you have questions, please contact us only after reading.<a class="link" href="#">FAQ</a>
+<br>
+Botometer is a  project of the Observatory on Social Media.<a class="link" href="#">Explore</a>
+</div>
+
+<div class="container">
+  <form class="form-inline"  action="{{ url_for('predict')}}" method="post">
+    <!-- <input class="form-control mr-sm-2" type="username" placeholder="@username" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button> -->
+    <label for="screen_name_binary">Screen_name_binary:</label>
+    <input type="text" id="screen_name_binary" name="screen_name_binary"><br><br>
+    <label for="name_binary">Name_binary:</label>
+    <input type="text" id="name_binary" name="name_binary"><br><br>
+    <label for="description_binary">Description_binary:</label>
+    <input type="text" id="description_binary" name="description_binary"><br><br>
+    <label for="status_binary">Status_binary:</label>
+    <input type="text" id="status_binary" name="status_binary"><br><br>
+    <label for="verified">Verified:</label>
+    <input type="text" id="verified" name="verified"><br><br>
+    <label for="followers_count">Followers_count:</label>
+    <input type="text" id="followers_count" name="followers_count"><br><br>
+    <label for="friends_count">Friends_count:</label>
+    <input type="text" id="friends_count" name="friends_count"><br><br>
+    <label for="statuses_count">Statuses_count:</label>
+    <input type="text" id="statuses_count" name="statuses_count"><br><br>
+    <label for="listed_count_binary">Listed_count_binary:</label>
+    <input type="text" id="listed_count_binary" name="listed_count_binary"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  {{ prediction_text }}
+</div> 
+</nav>
+</body>
+</html>

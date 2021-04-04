@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="faq1.css">
+    </head>
+    <body>
+        <dl class="faq">
+            <dt>
+              <button aria-expanded="false" aria-controls="faq1_desc">
+                What is a social bot?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq1_desc" class="desc">
+                There are many kinds of social bots. Some are harmless or even useful or amusing. But malicious bots can be used to manipulate social media users by amplifying misinformation, creating the appearance that some people, ideas, or products are more popular than they are, committing financial fraud, suppressing or disrupting speech, spreading malware or spam, trolling/attacking victims, and other types of abuse.
+                Given this wide range of behaviors, there is no universally agreed-upon definition of bot. We broadly define a social bot as a social media account controlled at least in part through software. Deceptive bots take on inauthentic personas and are controlled by unknown entities. Social media APIs provide methods to execute actions programmatically. A bot need not be automated or autonomous, although some are. Sophisticated autonomous bots are rare. Most automated bots simply act (reply/post/follow etc.) based on triggers or according to scripted patterns, such as retweeting all messages from certain accounts or posting messages from predefined lists.
+                Software may be used to allow a single entity to control many accounts in addition to, or instead of, carrying out autonomous actions. Such an entity may easily mix automatic and manual behaviors to avoid detection. The content of posts and timing of actions may originate from or be closely monitored by humans. When an account is accused of being inauthentic, the controlling entity may take over and engage with other users to claim authenticity. Therefore it is very difficult to prove that an account is a social bot, or who is behind it.
+              </p>
+            </dd>
+            <dt>
+              <button aria-expanded="false" aria-controls="faq2_desc">
+                Who is behind Bot deTechno and how can I contact them?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq2_desc" class="desc">
+                The best way to contact them is through the Teams information given up on the navigation bar.
+              </p>
+            </dd>
+            <dt>
+              <button aria-expanded="false" aria-controls="faq3_desc">
+                How does Bot deTechno work?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq3_desc" class="desc">
+                It takes input from the user and then with the help of machine learning techniques, it generates the reults.
+                <q>
+                What are the types of bots?
+                </q>
+                There are different types of Twitter bots.
+                Fake follower: bots purchased to increase follower counts
+                Financial: bots that post using cashtags
+                Self declared: bots from botwiki.org
+                Spammer: accounts labeled as spambots from several datasets
+                Other: miscellaneous other bots obtained from manual annotation, user feedback, etc.
+              </p>
+            </dd>
+            <dt>
+              <button aria-expanded="false" aria-controls="faq4_desc">
+                This account is clearly a bot/human! Why did you get it wrong?
+              </button>
+            </dt>
+            <dd>
+              <p id="faq4_desc" class="desc">
+                Bot detection is a hard task. Many criteria are used in determining whether an account is controlled by a human or a bot, and even a trained eye gets it wrong sometimes. If this task were easy to do with software, there wouldn't be any bots — Twitter would have already caught and banned them!
+                Another point to keep in mind is that humans and machines have different strengths when it comes to pattern recognition. Some "obviously" bot/human accounts according to a human observer will fool a machine learning algorithm. For example, Botometer sometimes categorizes "organizational accounts" as bot accounts. Likewise, an algorithm may confidently classify some accounts that humans have a hard time with. The best approach is to use this tool to complement, not to replace, your own judgement.
+                When you notice that we got a classification wrong, be sure to give us feedback! While we cannot promise to fix it, your feedback will help improve future classifiers.
+              </p>
+            </dd>
+            <dt>
+                <button aria-expanded="false" aria-controls="faq4_desc">
+                    How can I leave feedback about classification results?
+                </button>
+              </dt>
+              <dd>
+                <p id="faq4_desc" class="desc">
+                    In the teams section there is a box to provide your valuable feedbacks. 
+                </p>
+              </dd>
+          </dl>
+          <script>
+              var ButtonExpand = function (domNode) {
+
+this.domNode = domNode;
+
+this.keyCode = Object.freeze({
+  'RETURN': 13
+});
+};
+
+ButtonExpand.prototype.init = function () {
+
+this.controlledNode = false;
+
+var id = this.domNode.getAttribute('aria-controls');
+
+if (id) {
+  this.controlledNode = document.getElementById(id);
+}
+
+this.domNode.setAttribute('aria-expanded', 'false');
+this.hideContent();
+
+this.domNode.addEventListener('keydown',    this.handleKeydown.bind(this));
+this.domNode.addEventListener('click',      this.handleClick.bind(this));
+this.domNode.addEventListener('focus',      this.handleFocus.bind(this));
+this.domNode.addEventListener('blur',       this.handleBlur.bind(this));
+
+};
+
+ButtonExpand.prototype.showContent = function () {
+
+if (this.controlledNode) {
+  this.controlledNode.style.display = 'block';
+}
+
+};
+
+ButtonExpand.prototype.hideContent = function () {
+
+if (this.controlledNode) {
+  this.controlledNode.style.display = 'none';
+}
+
+};
+
+ButtonExpand.prototype.toggleExpand = function () {
+
+if (this.domNode.getAttribute('aria-expanded') === 'true') {
+  this.domNode.setAttribute('aria-expanded', 'false');
+  this.hideContent();
+}
+else {
+  this.domNode.setAttribute('aria-expanded', 'true');
+  this.showContent();
+}
+
+};
+
+/* EVENT HANDLERS */
+
+ButtonExpand.prototype.handleKeydown = function (event) {
+
+console.log('[keydown]');
+
+switch (event.keyCode) {
+
+  case this.keyCode.RETURN:
+
+    this.toggleExpand();
+
+    event.stopPropagation();
+    event.preventDefault();
+    break;
+
+  default:
+    break;
+}
+
+};
+
+ButtonExpand.prototype.handleClick = function (event) {
+this.toggleExpand();
+};
+
+ButtonExpand.prototype.handleFocus = function (event) {
+this.domNode.classList.add('focus');
+};
+
+ButtonExpand.prototype.handleBlur = function (event) {
+this.domNode.classList.remove('focus');
+};
+
+/* Initialize Hide/Show Buttons */
+
+window.addEventListener('load', function (event) {
+
+var buttons =  document.querySelectorAll('button[aria-expanded][aria-controls]');
+
+for (var i = 0; i < buttons.length; i++) {
+  var be = new ButtonExpand(buttons[i]);
+  be.init();
+}
+
+}, false);
+          </script>
+    </body>
+</html>
