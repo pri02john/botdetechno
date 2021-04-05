@@ -82,7 +82,7 @@ class my_dictionary(dict):
 
 #Initializing the flask App
 app = Flask(__name__) #Initialize the flask App
-model = pickle.load(open('model3.pkl', 'rb'))
+# model = pickle.load(open('model3.pkl', 'rb'))
 
 @app.route('/')
 def home():
